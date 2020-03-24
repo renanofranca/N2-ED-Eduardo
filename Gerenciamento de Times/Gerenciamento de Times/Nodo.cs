@@ -13,7 +13,7 @@ namespace Gerenciamento_de_Times
 
         public Nodo()
         {
-            CadastrarTimes.
+            Proximo = null;
         }
 
     }

@@ -12,8 +12,8 @@ namespace Gerenciamento_de_Times
         private string numero;
         private string posicao;
 
-        public string Nome { get; set; }
-        public string Numero { get; set; }
-        public string Posicao { get; set; }
+        public string Nome { get => nome; set => nome = value; }
+        public string Numero { get => numero; set => numero = value; }
+        public string Posicao { get => posicao; set => posicao = value; }
     }
 }

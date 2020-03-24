@@ -132,16 +132,28 @@ namespace Gerenciamento_de_Times
             return r.Trim();
         }
 
-        public bool Pesquisa(Time valor)
+        public bool Pesquisa(string time, string treinador)
         {
             Nodo aux = primeiro;
             while (aux != null)
             {
-                if (aux.Dado == valor)
-                    return true;
+                if (aux.Dado.NomeTime == time)
+                    throw new Exception("Time Já Cadastrado");
+                else if(aux.Dado.NomeTreinador == treinador)
+                    throw new Exception("Técnico Já Cadastrado");
                 aux = aux.Proximo;
             }
             return false;
+        }
+
+        public void AdicionarJogador(string time, )
+        {
+            Nodo aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.NomeTime == time)
+                    aux.Dado.jogador.Nome =       
+            }
         }
     }
 }
