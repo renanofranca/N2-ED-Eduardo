@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace Gerenciamento_de_Times
 {
-    public partial class Form1 : Form
+    public partial class Menu : Form
     {
-        public Form1()
+        public Menu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Meu pau na sua mão");
+
         }
     }
 }
