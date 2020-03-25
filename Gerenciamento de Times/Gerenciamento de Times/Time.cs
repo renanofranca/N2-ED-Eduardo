@@ -10,11 +10,12 @@ namespace Gerenciamento_de_Times
     {
         private string nomeTime;
         private string nomeTreinador;
-        
+        private ListaJogador listaJogador = new ListaJogador();
 
 
         public string NomeTime { get => nomeTime; set => nomeTime = value; }
         public string NomeTreinador { get => nomeTreinador; set => nomeTreinador = value; }
+        internal ListaJogador ListaJogador { get => listaJogador; set => listaJogador = value; }
 
         //Lista com 11 Jogadores
     }

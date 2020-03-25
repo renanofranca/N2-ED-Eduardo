@@ -1,6 +1,6 @@
 ﻿namespace Gerenciamento_de_Times
 {
-    partial class Menu
+    partial class Cadastrar
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -34,10 +34,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnCadastrarJogador = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCamisaJogador = new System.Windows.Forms.TextBox();
+            this.txtNomeJogador = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtPosicaoJogador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,10 +56,10 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(552, 362);
+            this.groupBox1.Size = new System.Drawing.Size(273, 362);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Menu";
+            this.groupBox1.Text = "Cadastrar";
             // 
             // groupBox3
             // 
@@ -67,10 +67,10 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.btnCadastrarJogador);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtCamisaJogador);
+            this.groupBox3.Controls.Add(this.txtNomeJogador);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtPosicaoJogador);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(6, 157);
             this.groupBox3.Name = "groupBox3";
@@ -117,44 +117,45 @@
             this.btnCadastrarJogador.UseVisualStyleBackColor = true;
             this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);
             // 
-            // textBox3
+            // txtCamisaJogador
             // 
-            this.textBox3.Location = new System.Drawing.Point(116, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtCamisaJogador.Location = new System.Drawing.Point(116, 90);
+            this.txtCamisaJogador.Name = "txtCamisaJogador";
+            this.txtCamisaJogador.Size = new System.Drawing.Size(121, 20);
+            this.txtCamisaJogador.TabIndex = 15;
             // 
-            // textBox2
+            // txtNomeJogador
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 64);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtNomeJogador.Location = new System.Drawing.Point(116, 64);
+            this.txtNomeJogador.Name = "txtNomeJogador";
+            this.txtNomeJogador.Size = new System.Drawing.Size(121, 20);
+            this.txtNomeJogador.TabIndex = 13;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 119);
+            this.label4.Location = new System.Drawing.Point(8, 119);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Posição";
             // 
-            // textBox4
+            // txtPosicaoJogador
             // 
-            this.textBox4.Location = new System.Drawing.Point(116, 116);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 17;
+            this.txtPosicaoJogador.Location = new System.Drawing.Point(116, 116);
+            this.txtPosicaoJogador.Name = "txtPosicaoJogador";
+            this.txtPosicaoJogador.Size = new System.Drawing.Size(121, 20);
+            this.txtPosicaoJogador.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 93);
+            this.label1.Location = new System.Drawing.Point(6, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 13);
             this.label1.TabIndex = 14;
             this.label1.Text = "Numero da Camisa";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // groupBox2
             // 
@@ -212,14 +213,15 @@
             this.btnCadastrarTime.UseVisualStyleBackColor = true;
             this.btnCadastrarTime.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // Menu
+            // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 384);
+            this.ClientSize = new System.Drawing.Size(292, 384);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Menu";
-            this.Text = "Menu";
+            this.Name = "Cadastrar";
+            this.Text = "Cadastrar";
+            this.Load += new System.EventHandler(this.Cadastrar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -241,10 +243,10 @@
         private System.Windows.Forms.Button btnCadastrarJogador;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtPosicaoJogador;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCamisaJogador;
+        private System.Windows.Forms.TextBox txtNomeJogador;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbxTimes;
         private System.Windows.Forms.Label label6;

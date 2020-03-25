@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace Gerenciamento_de_Times
 {
-    public partial class Menu : Form
+    public partial class Cadastrar : Form
     {
-        public Menu()
+        public Cadastrar()
         {
             InitializeComponent();
         }
 
+        VariaveisGlobais variaveisglobais = new VariaveisGlobais();
         ListaTime listaTime = new ListaTime();
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -25,15 +26,14 @@ namespace Gerenciamento_de_Times
             {
                 Time time = new Time();
 
-
                 time.NomeTime = txtNomeTime.Text;
                 time.NomeTreinador = txtNomeTreinador.Text;
 
                 //Validar Time existe, e adicionar a Lista
                 try
                 {
-                    listaTime.Pesquisa(txtNomeTime.Text, txtNomeTreinador.Text);
-                    listaTime.InserirNoFim(time);
+                    variaveisglobais.listaTime.Pesquisa(txtNomeTime.Text, txtNomeTreinador.Text);
+                    variaveisglobais.listaTime.InserirNoFim(time);
                     cbxTimes.Items.Add(txtNomeTime.Text);
 
                 }
@@ -57,9 +57,40 @@ namespace Gerenciamento_de_Times
 
         private void btnCadastrarJogador_Click(object sender, EventArgs e)
         {
-            Jogador jogodaor = new Jogador();
             string time = cbxTimes.Text;
+            Jogador jogador = new Jogador();
+            try
+            {
+                jogador.Nome = txtNomeJogador.Text;
+                jogador.Numero = int.Parse(txtCamisaJogador.Text);
+                jogador.Posicao = txtPosicaoJogador.Text;
+            }
+            catch
+            {
+                MessageBox.Show("Numero Da Camisa é Invalido");
+                return;
+            }
 
+            try
+            {
+                variaveisglobais.listaTime.InserirJogador(time, jogador);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+        private void Cadastrar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

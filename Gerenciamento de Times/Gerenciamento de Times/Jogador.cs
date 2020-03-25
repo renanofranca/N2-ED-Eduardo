@@ -9,11 +9,11 @@ namespace Gerenciamento_de_Times
     class Jogador
     {
         private string nome;
-        private string numero;
+        private int numero;
         private string posicao;
 
         public string Nome { get => nome; set => nome = value; }
-        public string Numero { get => numero; set => numero = value; }
+        public int Numero { get => numero; set => numero = value; }
         public string Posicao { get => posicao; set => posicao = value; }
     }
 }

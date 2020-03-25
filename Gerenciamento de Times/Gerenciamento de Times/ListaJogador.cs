@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Gerenciamento_de_Times
 {
-    class ListaTime
+    class ListaJogador
     {
-        public Nodo primeiro = null; // ponteiro para o primeiro elemento da lista        
+        public NodoJogador primeiro = null; // ponteiro para o primeiro elemento da lista        
         int qtde = 0;
 
         /// <summary>
@@ -17,9 +17,9 @@ namespace Gerenciamento_de_Times
         /// <param name="anterior">o nodo que será o anterior ao nodo inserido.
         /// Se o novo nodo for o primeiro, passe null</param>
         /// <param name="valor">o valor a ser inserido</param>
-        private void InserirNaPosicao(Nodo anterior, Time valor)
+        private void InserirNaPosicao(NodoJogador anterior, Jogador valor)
         {
-            Nodo novo = new Nodo();
+            NodoJogador novo = new NodoJogador();
             novo.Dado = valor;
 
             if (anterior == null)
@@ -44,7 +44,7 @@ namespace Gerenciamento_de_Times
         /// Insere um valor no início da lista
         /// </summary>
         /// <param name="valor"></param>
-        public void InserirNoInicio(Time valor)
+        public void InserirNoInicio(Jogador valor)
         {
             InserirNaPosicao(null, valor);
         }
@@ -54,13 +54,13 @@ namespace Gerenciamento_de_Times
         /// Insere um valor no final da lista
         /// </summary>
         /// <param name="valor"></param>
-        public void InserirNoFim(Time valor)
+        public void InserirNoFim(Jogador valor)
         {
             if (qtde == 0)
                 InserirNoInicio(valor);
             else
             {
-                Nodo aux = primeiro;
+                NodoJogador aux = primeiro;
                 while (aux.Proximo != null)
                     aux = aux.Proximo;
 
@@ -72,21 +72,34 @@ namespace Gerenciamento_de_Times
         /// </summary>
         /// <param name="valor">valor</param>
         /// <param name="posicao">posicao iniciando do 1</param>
-        public void InserirNaPosicao(Time valor, int posicao)
+        public void InserirNaPosicao(Jogador valor)
         {
-            if (posicao > qtde || posicao < 0)
-                throw new Exception("Não é possível inserir.");
 
-            if (posicao == 0)
+            if (qtde == 11)
+                throw new Exception("Numero maximo de jogadores atingidos");
+
+            if (qtde == 0)
                 InserirNoInicio(valor);
             else
             {
-                //descobre qual é o nodo anterior ao que será incluído
-                Nodo aux = primeiro;
-                for (int i = 1; i < posicao; i++)
-                    aux = aux.Proximo;
+                int contagem = 0;
+                NodoJogador aux = primeiro;
+                while (aux != null)
+                {
+                    if (valor.Numero < aux.Dado.Numero)
+                    {
+                        InserirNaPosicao(aux, valor);
+                        break;
+                    }
+                    else if(aux != null)
+                    {
+                        InserirNoFim(valor);
+                    }
+                    else
+                        contagem++;
 
-                InserirNaPosicao(aux, valor);
+                    aux = aux.Proximo;
+                }
             }
         }
 
@@ -105,7 +118,7 @@ namespace Gerenciamento_de_Times
             else
             {
                 //descobre qual é o nodo anterior que será excluido
-                Nodo aux = primeiro;
+                NodoJogador aux = primeiro;
                 for (int i = 1; i < posicao; i++)
                     aux = aux.Proximo;
 
@@ -123,7 +136,7 @@ namespace Gerenciamento_de_Times
         public string Listar()
         {
             string r = string.Empty;
-            Nodo aux = primeiro;
+            NodoJogador aux = primeiro;
             while (aux != null)
             {
                 r = r + Environment.NewLine + aux.Dado;
@@ -132,32 +145,18 @@ namespace Gerenciamento_de_Times
             return r.Trim();
         }
 
-        public bool Pesquisa(string time, string treinador)
-        {
-            Nodo aux = primeiro;
-            while (aux != null)
-            {
-                if (aux.Dado.NomeTime == time)
-                    throw new Exception("Time Já Cadastrado");
-                else if(aux.Dado.NomeTreinador == treinador)
-                    throw new Exception("Técnico Já Cadastrado");
-                aux = aux.Proximo;
-            }
-            return false;
-        }
-
-        public void InserirJogador(string time, Jogador jogador)
-        {
-            Nodo aux = primeiro;
-            while (aux != null)
-            {
-                if (aux.Dado.NomeTime == time)
-                {
-                    aux.Dado.ListaJogador.InserirNaPosicao(jogador);
-                    return;
-                }
-                aux = aux.Proximo;
-            }
-        }
+        //public bool Pesquisa(string time, string treinador)
+        //{
+        //    NodoJogador aux = primeiro;
+        //    while (aux != null)
+        //    {
+        //        if (aux.Dado.NomeTime == time)
+        //            throw new Exception("Time Já Cadastrado");
+        //        else if (aux.Dado.NomeTreinador == treinador)
+        //            throw new Exception("Técnico Já Cadastrado");
+        //        aux = aux.Proximo;
+        //    }
+        //    return false;
+        //}
     }
 }
