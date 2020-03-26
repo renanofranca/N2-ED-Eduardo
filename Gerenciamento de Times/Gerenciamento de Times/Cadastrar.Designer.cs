@@ -30,6 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbxPosicaoJogador = new System.Windows.Forms.ComboBox();
             this.cbxTimes = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.txtNomeTreinador = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCadastrarTime = new System.Windows.Forms.Button();
-            this.cbxPosicaoJogador = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -79,8 +79,23 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cadastrar Jogadores";
             // 
+            // cbxPosicaoJogador
+            // 
+            this.cbxPosicaoJogador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxPosicaoJogador.FormattingEnabled = true;
+            this.cbxPosicaoJogador.Items.AddRange(new object[] {
+            "Goleiro",
+            "Defesa",
+            "Meia",
+            "Atacante"});
+            this.cbxPosicaoJogador.Location = new System.Drawing.Point(116, 115);
+            this.cbxPosicaoJogador.Name = "cbxPosicaoJogador";
+            this.cbxPosicaoJogador.Size = new System.Drawing.Size(121, 21);
+            this.cbxPosicaoJogador.TabIndex = 17;
+            // 
             // cbxTimes
             // 
+            this.cbxTimes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTimes.FormattingEnabled = true;
             this.cbxTimes.Location = new System.Drawing.Point(116, 32);
             this.cbxTimes.Name = "cbxTimes";
@@ -205,19 +220,6 @@
             this.btnCadastrarTime.Text = "Cadastrar Time";
             this.btnCadastrarTime.UseVisualStyleBackColor = true;
             this.btnCadastrarTime.Click += new System.EventHandler(this.btnCadastrar_Click);
-            // 
-            // cbxPosicaoJogador
-            // 
-            this.cbxPosicaoJogador.FormattingEnabled = true;
-            this.cbxPosicaoJogador.Items.AddRange(new object[] {
-            "Goleiro",
-            "Defesa",
-            "Meia",
-            "Atacante"});
-            this.cbxPosicaoJogador.Location = new System.Drawing.Point(116, 115);
-            this.cbxPosicaoJogador.Name = "cbxPosicaoJogador";
-            this.cbxPosicaoJogador.Size = new System.Drawing.Size(121, 21);
-            this.cbxPosicaoJogador.TabIndex = 17;
             // 
             // Cadastrar
             // 

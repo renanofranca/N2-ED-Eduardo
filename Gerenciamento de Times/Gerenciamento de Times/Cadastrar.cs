@@ -59,6 +59,11 @@ namespace Gerenciamento_de_Times
         {
             string time = cbxTimes.Text;
             Jogador jogador = new Jogador();
+            if (txtNomeJogador.Text == "" || cbxPosicaoJogador.Text == "")
+            {
+                MessageBox.Show("Nome do Jogador ou Posição Não Preenchidos");
+                return;
+            }
             try
             {
                 jogador.Nome = txtNomeJogador.Text;
@@ -79,10 +84,10 @@ namespace Gerenciamento_de_Times
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
-                throw;
             }
             txtNomeJogador.Clear();
             txtCamisaJogador.Clear();
+            
 
         }
 
