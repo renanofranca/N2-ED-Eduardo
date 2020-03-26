@@ -30,32 +30,65 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.btnListarInvertido = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnListarInvertido);
+            this.panel1.Controls.Add(this.btnListar);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 426);
+            this.panel1.Size = new System.Drawing.Size(238, 329);
             this.panel1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 17);
+            this.label1.Location = new System.Drawing.Point(13, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
+            this.label1.Text = "Listar";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(16, 27);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(207, 248);
+            this.textBox1.TabIndex = 1;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(16, 291);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(98, 23);
+            this.btnListar.TabIndex = 2;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            // 
+            // btnListarInvertido
+            // 
+            this.btnListarInvertido.Location = new System.Drawing.Point(125, 291);
+            this.btnListarInvertido.Name = "btnListarInvertido";
+            this.btnListarInvertido.Size = new System.Drawing.Size(98, 23);
+            this.btnListarInvertido.TabIndex = 3;
+            this.btnListarInvertido.Text = "Listar Invertido";
+            this.btnListarInvertido.UseVisualStyleBackColor = true;
             // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 450);
+            this.ClientSize = new System.Drawing.Size(261, 350);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Lista";
             this.Text = "Lista";
             this.panel1.ResumeLayout(false);
@@ -68,5 +101,8 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnListarInvertido;
+        private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
