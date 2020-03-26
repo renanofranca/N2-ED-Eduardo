@@ -134,7 +134,19 @@ namespace Gerenciamento_de_Times
             while (aux != null)
             {
                 if (aux.Dado.Nome == valor.Nome || aux.Dado.Numero == valor.Numero)
-                    throw new Exception("Jogador Já Cadastrado");
+                    return true;
+                aux = aux.Proximo;
+            }
+            return false;
+        }
+
+        public bool PesquisaJogador(string valor)
+        {
+            NodoJogador aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.Nome == valor)
+                    return true;
                 aux = aux.Proximo;
             }
             return false;

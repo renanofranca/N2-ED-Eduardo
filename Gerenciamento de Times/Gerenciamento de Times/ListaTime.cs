@@ -170,5 +170,21 @@ namespace Gerenciamento_de_Times
             }
             aux = aux.Proximo;
         }
+
+        public string RetornarResultadoPesquisa(string nome)
+        {
+            string resposta = "";
+            Nodo aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.ListaJogador.PesquisaJogador(nome))
+                {
+                    resposta += aux.Dado.NomeTime + ";";
+                }
+                aux = aux.Proximo;
+            }
+
+            return resposta;
+        }
     }
 }

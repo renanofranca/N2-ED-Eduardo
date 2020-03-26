@@ -8,6 +8,9 @@ namespace Gerenciamento_de_Times
 {
     class VariaveisGlobais
     {
+        private int qtdeTime = 0;
         public ListaTime listaTime = new ListaTime();
+
+        public int QtdeTime { get => qtdeTime; set => qtdeTime = value; }
     }
 }

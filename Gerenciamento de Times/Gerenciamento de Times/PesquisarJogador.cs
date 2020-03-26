@@ -16,5 +16,25 @@ namespace Gerenciamento_de_Times
         {
             InitializeComponent();
         }
+
+        VariaveisGlobais variavesglobais = new VariaveisGlobais();
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string nomeJogador = txtNomePesquisa.Text;
+            string resposta = variavesglobais.listaTime.RetornarResultadoPesquisa(nomeJogador);
+
+            string[] respostavet = resposta.Split(';');
+
+            for (int i = 0; i < respostavet.Length; i++)
+            {
+                txtRespostaPesquisa.Text += respostavet[i] + Environment.NewLine;
+            }
+        }
     }
 }

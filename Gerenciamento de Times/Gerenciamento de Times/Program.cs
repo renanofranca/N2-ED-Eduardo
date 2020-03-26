@@ -16,7 +16,7 @@ namespace Gerenciamento_de_Times
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cadastrar());
+            Application.Run(new Menu());
         }
     }
 }

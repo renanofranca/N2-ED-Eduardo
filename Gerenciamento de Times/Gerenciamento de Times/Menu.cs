@@ -16,5 +16,16 @@ namespace Gerenciamento_de_Times
         {
             InitializeComponent();
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            PesquisarJogador pesquisarjogador = new PesquisarJogador();
+            pesquisarjogador.Show();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
