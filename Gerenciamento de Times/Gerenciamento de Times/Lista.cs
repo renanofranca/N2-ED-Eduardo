@@ -22,7 +22,7 @@ namespace Gerenciamento_de_Times
         {
             VariaveisGlobais variaveisglobais = new VariaveisGlobais();
             ListaTime listaTime = new ListaTime();
-            txtLista.Text = Convert.ToString(variaveisglobais.listaTime.Listar());
+            txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.Listar());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

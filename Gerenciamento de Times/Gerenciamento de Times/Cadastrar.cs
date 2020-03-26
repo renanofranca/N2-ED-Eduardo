@@ -17,7 +17,6 @@ namespace Gerenciamento_de_Times
             InitializeComponent();
         }
 
-        VariaveisGlobais variaveisglobais = new VariaveisGlobais();
         ListaTime listaTime = new ListaTime();
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -32,8 +31,8 @@ namespace Gerenciamento_de_Times
                 //Validar Time existe, e adicionar a Lista
                 try
                 {
-                    variaveisglobais.listaTime.Pesquisa(txtNomeTime.Text, txtNomeTreinador.Text);
-                    variaveisglobais.listaTime.InserirNoFim(time);
+                    VariaveisGlobais.listaTime.Pesquisa(txtNomeTime.Text, txtNomeTreinador.Text);
+                    VariaveisGlobais.listaTime.InserirNoFim(time);
                     cbxTimes.Items.Add(txtNomeTime.Text);
 
                 }
@@ -78,8 +77,8 @@ namespace Gerenciamento_de_Times
 
             try
             {
-                variaveisglobais.listaTime.PesquisarDoJogador(jogador);
-                variaveisglobais.listaTime.InserirJogador(time, jogador);
+                VariaveisGlobais.listaTime.PesquisarDoJogador(jogador);
+                VariaveisGlobais.listaTime.InserirJogador(time, jogador);
             }
             catch (Exception err)
             {

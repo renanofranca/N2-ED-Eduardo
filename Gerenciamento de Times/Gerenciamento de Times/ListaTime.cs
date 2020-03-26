@@ -116,22 +116,6 @@ namespace Gerenciamento_de_Times
         }
 
 
-        /// <summary>
-        /// Retorna um string com todos os elementos da lista concatenados
-        /// </summary>
-        /// <returns></returns>
-        public string Listar()
-        {
-            string r = string.Empty;
-            Nodo aux = primeiro;
-            while (aux != null)
-            {
-                r = r + Environment.NewLine + aux.Dado;
-                aux = aux.Proximo;
-            }
-            return r.Trim();
-        }
-
         public bool Pesquisa(string time, string treinador)
         {
             Nodo aux = primeiro;
@@ -185,6 +169,17 @@ namespace Gerenciamento_de_Times
             }
 
             return resposta;
+        }
+        public string Listar()
+        {
+            string r = string.Empty;
+            Nodo aux = primeiro;
+            while (aux != null)
+            {
+                r = r + Environment.NewLine + aux.Dado;
+                aux = aux.Proximo;
+            }
+            return r.Trim();
         }
     }
 }

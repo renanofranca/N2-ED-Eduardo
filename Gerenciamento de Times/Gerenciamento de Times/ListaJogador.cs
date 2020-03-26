@@ -128,16 +128,15 @@ namespace Gerenciamento_de_Times
         /// Retorna um 
         /// </summary>
         /// <returns></returns>
-        public bool PesquisaJogador(Jogador valor)
+        public void PesquisaJogador(Jogador valor)
         {
             NodoJogador aux = primeiro;
             while (aux != null)
             {
                 if (aux.Dado.Nome == valor.Nome || aux.Dado.Numero == valor.Numero)
-                    return true;
+                    throw new Exception("Jogador ou numero já cadastrado");
                 aux = aux.Proximo;
             }
-            return false;
         }
 
         public bool PesquisaJogador(string valor)
