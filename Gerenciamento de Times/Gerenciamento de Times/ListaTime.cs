@@ -144,15 +144,19 @@ namespace Gerenciamento_de_Times
             }
         }
 
-        public void PesquisarDoJogador(Jogador jogador)
+        public void PesquisarDoJogador(Jogador jogador, string nomeTime)
         {
             Nodo aux = primeiro;
             while (aux != null)
             {
-                aux.Dado.ListaJogador.PesquisaJogador(jogador);
-                return;
+                if (aux.Dado.NomeTime == nomeTime)
+                {
+                    aux.Dado.ListaJogador.PesquisaJogador(jogador);
+                    return;
+                }
+                aux = aux.Proximo;
+
             }
-            aux = aux.Proximo;
         }
 
         public string RetornarResultadoPesquisa(string nome)

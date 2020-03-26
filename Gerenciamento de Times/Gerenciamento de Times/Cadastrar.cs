@@ -77,7 +77,7 @@ namespace Gerenciamento_de_Times
 
             try
             {
-                VariaveisGlobais.listaTime.PesquisarDoJogador(jogador);
+                VariaveisGlobais.listaTime.PesquisarDoJogador(jogador, time);
                 VariaveisGlobais.listaTime.InserirJogador(time, jogador);
             }
             catch (Exception err)
