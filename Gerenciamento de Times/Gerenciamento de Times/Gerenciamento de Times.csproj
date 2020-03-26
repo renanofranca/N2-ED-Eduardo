@@ -61,8 +61,20 @@
     </Compile>
     <Compile Include="ListaJogador.cs" />
     <Compile Include="ListaTime.cs" />
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nodo.cs" />
     <Compile Include="NodoJogador.cs" />
+    <Compile Include="PesquisarJogador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PesquisarJogador.Designer.cs">
+      <DependentUpon>PesquisarJogador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Time.cs" />
@@ -72,6 +84,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Lista.resx">
       <DependentUpon>Lista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PesquisarJogador.resx">
+      <DependentUpon>PesquisarJogador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
