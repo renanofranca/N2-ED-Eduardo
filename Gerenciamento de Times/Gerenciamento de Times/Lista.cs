@@ -20,8 +20,6 @@ namespace Gerenciamento_de_Times
         
         private void btnListar_Click(object sender, EventArgs e)
         {
-            VariaveisGlobais variaveisglobais = new VariaveisGlobais();
-            ListaTime listaTime = new ListaTime();
             txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.Listar());
         }
 
