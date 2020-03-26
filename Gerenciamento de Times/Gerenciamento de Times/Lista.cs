@@ -15,6 +15,19 @@ namespace Gerenciamento_de_Times
         public Lista()
         {
             InitializeComponent();
+            txtLista.ReadOnly = true;
+        }
+        
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            VariaveisGlobais variaveisglobais = new VariaveisGlobais();
+            ListaTime listaTime = new ListaTime();
+            txtLista.Text = Convert.ToString(variaveisglobais.listaTime.Listar());
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

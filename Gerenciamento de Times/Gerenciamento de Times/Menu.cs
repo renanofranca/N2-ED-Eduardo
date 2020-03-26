@@ -16,5 +16,17 @@ namespace Gerenciamento_de_Times
         {
             InitializeComponent();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Cadastrar cadastrar = new Cadastrar();
+            cadastrar.Show();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Lista lista = new Lista();
+            lista.Show();
+        }
     }
 }
