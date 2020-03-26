@@ -63,7 +63,7 @@ namespace Gerenciamento_de_Times
             {
                 jogador.Nome = txtNomeJogador.Text;
                 jogador.Numero = int.Parse(txtCamisaJogador.Text);
-                jogador.Posicao = txtPosicaoJogador.Text;
+                jogador.Posicao = cbxPosicaoJogador.Text;
             }
             catch
             {

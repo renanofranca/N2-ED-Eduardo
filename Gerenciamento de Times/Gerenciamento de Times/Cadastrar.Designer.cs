@@ -37,7 +37,6 @@
             this.txtCamisaJogador = new System.Windows.Forms.TextBox();
             this.txtNomeJogador = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtPosicaoJogador = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@
             this.txtNomeTreinador = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCadastrarTime = new System.Windows.Forms.Button();
+            this.cbxPosicaoJogador = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -63,6 +63,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbxPosicaoJogador);
             this.groupBox3.Controls.Add(this.cbxTimes);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label5);
@@ -70,7 +71,6 @@
             this.groupBox3.Controls.Add(this.txtCamisaJogador);
             this.groupBox3.Controls.Add(this.txtNomeJogador);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.txtPosicaoJogador);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Location = new System.Drawing.Point(6, 157);
             this.groupBox3.Name = "groupBox3";
@@ -140,13 +140,6 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "Posição";
             // 
-            // txtPosicaoJogador
-            // 
-            this.txtPosicaoJogador.Location = new System.Drawing.Point(116, 116);
-            this.txtPosicaoJogador.Name = "txtPosicaoJogador";
-            this.txtPosicaoJogador.Size = new System.Drawing.Size(121, 20);
-            this.txtPosicaoJogador.TabIndex = 17;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -213,6 +206,19 @@
             this.btnCadastrarTime.UseVisualStyleBackColor = true;
             this.btnCadastrarTime.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
+            // cbxPosicaoJogador
+            // 
+            this.cbxPosicaoJogador.FormattingEnabled = true;
+            this.cbxPosicaoJogador.Items.AddRange(new object[] {
+            "Goleiro",
+            "Defesa",
+            "Meia",
+            "Atacante"});
+            this.cbxPosicaoJogador.Location = new System.Drawing.Point(116, 115);
+            this.cbxPosicaoJogador.Name = "cbxPosicaoJogador";
+            this.cbxPosicaoJogador.Size = new System.Drawing.Size(121, 21);
+            this.cbxPosicaoJogador.TabIndex = 17;
+            // 
             // Cadastrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,13 +249,13 @@
         private System.Windows.Forms.Button btnCadastrarJogador;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPosicaoJogador;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtCamisaJogador;
         private System.Windows.Forms.TextBox txtNomeJogador;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbxTimes;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbxPosicaoJogador;
     }
 }
 

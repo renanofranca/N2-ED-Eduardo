@@ -73,59 +73,39 @@ namespace Gerenciamento_de_Times
         /// <param name="valor">valor</param>
         /// <param name="posicao">posicao iniciando do 1</param>
         public void InserirNaPosicao(Jogador valor)
-        {
-
-            if (qtde == 11)
-                throw new Exception("Numero maximo de jogadores atingidos");
-
-            if (qtde == 0)
-                InserirNoInicio(valor);
-            else
+        {            
+            //Verificar Posição 
+            int contagem = 0;
+            NodoJogador aux = primeiro;
+            while (aux != null)
             {
-                int contagem = 0;
-                NodoJogador aux = primeiro;
-                while (aux != null)
+                if (valor.Numero > aux.Dado.Numero)
                 {
-                    if (valor.Numero < aux.Dado.Numero)
-                    {
-                        InserirNaPosicao(aux, valor);
-                        break;
-                    }
-                    else if(aux != null)
-                    {
-                        InserirNoFim(valor);
-                    }
-                    else
-                        contagem++;
-
-                    aux = aux.Proximo;
+                    contagem++;
                 }
+                else
+                    break;
+                aux = aux.Proximo;
             }
-        }
 
-        /// <summary>
-        /// Remove um elemento da lista com base em sua posição, que inicia
-        /// do zero
-        /// </summary>
-        /// <param name="posicao">posição</param>
-        public void RemoverDaPosicao(int posicao)
-        {
-            if (posicao >= qtde || posicao < 0 || qtde == 0)
-                throw new Exception("Não é possível remover.");
+            if (contagem > qtde || contagem < 0)
+                throw new Exception("Não é possível inserir.");
+            if (qtde >= 11)
+                throw new Exception("Não é possível inserir. Numero maxio atingido");
 
-            if (posicao == 0)
-                primeiro = primeiro.Proximo;
+
+
+            if (contagem == 0)
+                InserirNoInicio(valor);     
             else
             {
-                //descobre qual é o nodo anterior que será excluido
-                NodoJogador aux = primeiro;
-                for (int i = 1; i < posicao; i++)
+                //descobre qual é o nodo anterior ao que será incluído
+                NodoJogador aux2 = primeiro;
+                for (int i = 1; i < contagem; i++)
                     aux = aux.Proximo;
 
-                aux.Proximo = aux.Proximo.Proximo;
+                InserirNaPosicao(aux2, valor);
             }
-
-            qtde--;
         }
 
 
