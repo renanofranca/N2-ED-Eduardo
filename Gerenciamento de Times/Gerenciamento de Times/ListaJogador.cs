@@ -124,6 +124,21 @@ namespace Gerenciamento_de_Times
             }
             return r.Trim();
         }
+        /// <summary>
+        /// Retorna um 
+        /// </summary>
+        /// <returns></returns>
+        public bool PesquisaJogador(Jogador valor)
+        {
+            NodoJogador aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.Nome == valor.Nome || aux.Dado.Numero == valor.Numero)
+                    throw new Exception("Jogador Já Cadastrado");
+                aux = aux.Proximo;
+            }
+            return false;
+        }
 
         //public bool Pesquisa(string time, string treinador)
         //{

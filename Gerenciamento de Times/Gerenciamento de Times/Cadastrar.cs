@@ -73,14 +73,16 @@ namespace Gerenciamento_de_Times
 
             try
             {
+                variaveisglobais.listaTime.PesquisarDoJogador(jogador);
                 variaveisglobais.listaTime.InserirJogador(time, jogador);
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                MessageBox.Show(err.Message);
                 throw;
             }
-
+            txtNomeJogador.Clear();
+            txtCamisaJogador.Clear();
 
         }
 

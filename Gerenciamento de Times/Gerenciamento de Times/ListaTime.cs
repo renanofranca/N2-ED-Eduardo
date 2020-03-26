@@ -159,5 +159,16 @@ namespace Gerenciamento_de_Times
                 aux = aux.Proximo;
             }
         }
+
+        public void PesquisarDoJogador(Jogador jogador)
+        {
+            Nodo aux = primeiro;
+            while (aux != null)
+            {
+                aux.Dado.ListaJogador.PesquisaJogador(jogador);
+                return;
+            }
+            aux = aux.Proximo;
+        }
     }
 }
