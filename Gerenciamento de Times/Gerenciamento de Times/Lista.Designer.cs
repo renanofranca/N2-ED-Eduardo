@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnListar = new System.Windows.Forms.Button();
             this.btnListarInvertido = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
+            this.txtLista = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,38 +40,13 @@
             // 
             this.panel1.Controls.Add(this.btnListarInvertido);
             this.panel1.Controls.Add(this.btnListar);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtLista);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(238, 329);
             this.panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Listar";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(16, 27);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(207, 248);
-            this.textBox1.TabIndex = 1;
-            // 
-            // btnListar
-            // 
-            this.btnListar.Location = new System.Drawing.Point(16, 291);
-            this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(98, 23);
-            this.btnListar.TabIndex = 2;
-            this.btnListar.Text = "Listar";
-            this.btnListar.UseVisualStyleBackColor = true;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnListarInvertido
             // 
@@ -81,6 +56,33 @@
             this.btnListarInvertido.TabIndex = 3;
             this.btnListarInvertido.Text = "Listar Invertido";
             this.btnListarInvertido.UseVisualStyleBackColor = true;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(16, 291);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(98, 23);
+            this.btnListar.TabIndex = 2;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // txtLista
+            // 
+            this.txtLista.Location = new System.Drawing.Point(16, 27);
+            this.txtLista.Multiline = true;
+            this.txtLista.Name = "txtLista";
+            this.txtLista.Size = new System.Drawing.Size(207, 248);
+            this.txtLista.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Listar";
             // 
             // Lista
             // 
@@ -103,6 +105,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnListarInvertido;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLista;
     }
 }
