@@ -229,6 +229,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Cadastrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar";
             this.Load += new System.EventHandler(this.Cadastrar_Load);
             this.groupBox1.ResumeLayout(false);

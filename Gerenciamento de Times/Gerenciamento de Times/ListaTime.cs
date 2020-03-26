@@ -180,7 +180,7 @@ namespace Gerenciamento_de_Times
             Nodo aux = primeiro;
             while (aux != null)
             {
-                r = r + Environment.NewLine + aux.Dado;
+                r = r + Environment.NewLine + aux.Dado.NomeTime;
                 aux = aux.Proximo;
             }
             return r.Trim();

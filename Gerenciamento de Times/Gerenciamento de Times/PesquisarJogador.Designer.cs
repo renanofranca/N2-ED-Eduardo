@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtNomePesquisa = new System.Windows.Forms.TextBox();
-            this.txtRespostaPesquisa = new System.Windows.Forms.TextBox();
             this.btnPesquisar = new System.Windows.Forms.Button();
+            this.txtRespostaPesquisa = new System.Windows.Forms.TextBox();
+            this.txtNomePesquisa = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,21 +50,15 @@
             this.groupBox1.Text = "Pesquisar";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label1
+            // btnPesquisar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome do Jogador";
-            // 
-            // txtNomePesquisa
-            // 
-            this.txtNomePesquisa.Location = new System.Drawing.Point(103, 30);
-            this.txtNomePesquisa.Name = "txtNomePesquisa";
-            this.txtNomePesquisa.Size = new System.Drawing.Size(213, 20);
-            this.txtNomePesquisa.TabIndex = 1;
+            this.btnPesquisar.Location = new System.Drawing.Point(222, 63);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(94, 23);
+            this.btnPesquisar.TabIndex = 4;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // txtRespostaPesquisa
             // 
@@ -76,15 +70,21 @@
             this.txtRespostaPesquisa.Size = new System.Drawing.Size(310, 253);
             this.txtRespostaPesquisa.TabIndex = 3;
             // 
-            // btnPesquisar
+            // txtNomePesquisa
             // 
-            this.btnPesquisar.Location = new System.Drawing.Point(222, 63);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(94, 23);
-            this.btnPesquisar.TabIndex = 4;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
+            this.txtNomePesquisa.Location = new System.Drawing.Point(103, 30);
+            this.txtNomePesquisa.Name = "txtNomePesquisa";
+            this.txtNomePesquisa.Size = new System.Drawing.Size(213, 20);
+            this.txtNomePesquisa.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome do Jogador";
             // 
             // PesquisarJogador
             // 
@@ -93,6 +93,7 @@
             this.ClientSize = new System.Drawing.Size(346, 382);
             this.Controls.Add(this.groupBox1);
             this.Name = "PesquisarJogador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PesquisarJogador";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
