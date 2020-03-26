@@ -32,9 +32,14 @@ namespace Gerenciamento_de_Times
 
             string[] respostavet = resposta.Split(';');
 
-            for (int i = 0; i < respostavet.Length; i++)
+            if (resposta == "")
+                txtRespostaPesquisa.Text = "Nenhum Jogador Encontrado ";
+            else
             {
-                txtRespostaPesquisa.Text += respostavet[i] + Environment.NewLine;
+                for (int i = 0; i < respostavet.Length; i++)
+                {
+                    txtRespostaPesquisa.Text += respostavet[i] + Environment.NewLine;
+                }
             }
         }
     }
