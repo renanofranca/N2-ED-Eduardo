@@ -56,6 +56,7 @@
             this.btnListarInvertido.TabIndex = 3;
             this.btnListarInvertido.Text = "Listar Invertido";
             this.btnListarInvertido.UseVisualStyleBackColor = true;
+            this.btnListarInvertido.Click += new System.EventHandler(this.btnListarInvertido_Click);
             // 
             // btnListar
             // 

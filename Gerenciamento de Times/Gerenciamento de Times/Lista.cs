@@ -20,12 +20,19 @@ namespace Gerenciamento_de_Times
         
         private void btnListar_Click(object sender, EventArgs e)
         {
+            txtLista.Text = "";
             txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.Listar());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnListarInvertido_Click(object sender, EventArgs e)
+        {
+            txtLista.Text = "";
+            txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.ListarInvertido());
         }
     }
 }
