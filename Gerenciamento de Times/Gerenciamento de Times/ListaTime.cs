@@ -194,5 +194,16 @@ namespace Gerenciamento_de_Times
             }
             return r.Trim();
         }
+        public string ListarInvertido()
+        {
+            string r = string.Empty;
+            Nodo aux = primeiro;
+            for (int i = qtde; i <= 0; i--)
+            {
+                r = r + Environment.NewLine + aux.Dado.NomeTime;
+                aux = aux.Proximo;
+            }
+            return r.Trim();
+        }
     }
 }
