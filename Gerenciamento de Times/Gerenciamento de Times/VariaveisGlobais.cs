@@ -15,5 +15,6 @@ namespace Gerenciamento_de_Times
             return listaTime.RetornarResultadoPesquisa(nome);
         }
 
+        public static ListaJogador listaJogador = new ListaJogador();
     }
 }

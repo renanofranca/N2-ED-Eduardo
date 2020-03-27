@@ -16,6 +16,7 @@ namespace Gerenciamento_de_Times
         {
             InitializeComponent();
             txtLista.ReadOnly = true;
+            txtLista.ScrollBars = ScrollBars.Vertical;
         }
         
         private void btnListar_Click(object sender, EventArgs e)

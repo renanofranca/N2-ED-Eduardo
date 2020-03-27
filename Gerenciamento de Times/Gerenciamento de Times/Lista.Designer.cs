@@ -44,15 +44,15 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(238, 329);
+            this.panel1.Size = new System.Drawing.Size(531, 558);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnListarInvertido
             // 
-            this.btnListarInvertido.Location = new System.Drawing.Point(125, 291);
+            this.btnListarInvertido.Location = new System.Drawing.Point(270, 513);
             this.btnListarInvertido.Name = "btnListarInvertido";
-            this.btnListarInvertido.Size = new System.Drawing.Size(98, 23);
+            this.btnListarInvertido.Size = new System.Drawing.Size(252, 32);
             this.btnListarInvertido.TabIndex = 3;
             this.btnListarInvertido.Text = "Listar Invertido";
             this.btnListarInvertido.UseVisualStyleBackColor = true;
@@ -60,9 +60,9 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(16, 291);
+            this.btnListar.Location = new System.Drawing.Point(12, 513);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(98, 23);
+            this.btnListar.Size = new System.Drawing.Size(252, 32);
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -70,10 +70,10 @@
             // 
             // txtLista
             // 
-            this.txtLista.Location = new System.Drawing.Point(16, 27);
+            this.txtLista.Location = new System.Drawing.Point(12, 27);
             this.txtLista.Multiline = true;
             this.txtLista.Name = "txtLista";
-            this.txtLista.Size = new System.Drawing.Size(207, 248);
+            this.txtLista.Size = new System.Drawing.Size(510, 480);
             this.txtLista.TabIndex = 1;
             // 
             // label1
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(261, 350);
+            this.ClientSize = new System.Drawing.Size(555, 582);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Lista";

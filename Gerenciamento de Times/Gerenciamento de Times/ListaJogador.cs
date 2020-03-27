@@ -124,11 +124,12 @@ namespace Gerenciamento_de_Times
         /// <returns></returns>
         public string Listar()
         {
-            string r = string.Empty;
+            string r = "Jogadores: ";
             NodoJogador aux = primeiro;
             while (aux != null)
             {
-                r = r + Environment.NewLine + aux.Dado;
+                r = r + Environment.NewLine + "     " + "Nºcamisa: " + aux.Dado.Numero + " - Nome: " + aux.Dado.Nome + " - POSICAO: "
+                    +aux.Dado.Posicao ;
                 aux = aux.Proximo;
             }
             return r.Trim();
