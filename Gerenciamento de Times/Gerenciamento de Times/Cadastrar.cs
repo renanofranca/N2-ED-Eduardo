@@ -92,9 +92,15 @@ namespace Gerenciamento_de_Times
 
         private void Cadastrar_Load(object sender, EventArgs e)
         {
-            while(VariaveisGlobais.quatidadetimes != 0)
+            string timesCadastrados = VariaveisGlobais.listaTime.RetornaSomenteOsTimes();
+            string[] timesCadastradosVetor = timesCadastrados.Split('|');
+
+            if(timesCadastrados != "")
             {
-                cbxTimes.Items.Add((VariaveisGlobais.listaTime.RetornaSomenteOsTimes).ToString);
+                for (int i = 0; i < timesCadastradosVetor.Length; i++)
+                {
+                    cbxTimes.Items.Add(timesCadastradosVetor[i]);
+                }
             }
         }
 

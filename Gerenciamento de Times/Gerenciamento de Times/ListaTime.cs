@@ -239,8 +239,19 @@ namespace Gerenciamento_de_Times
 
         public string RetornaSomenteOsTimes()
         {
-            Nodo aux = primeiro;
-            return (aux.Dado.NomeTime);
+            string retorno = "";
+            if (qtde > 0)
+            {
+                Nodo aux = primeiro;
+                while (aux != null)
+                {
+                    retorno += aux.Dado.NomeTime + "|";
+                    aux = aux.Proximo;
+                }
+                retorno = retorno.Substring(0, retorno.Length - 1);
+            }
+            return retorno;
+
         }
     }
 }
