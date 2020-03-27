@@ -8,7 +8,8 @@ namespace Gerenciamento_de_Times
 {
     class ListaJogador
     {
-        public NodoJogador primeiro = null; // ponteiro para o primeiro elemento da lista        
+        public NodoJogador primeiro = null;// ponteiro para o primeiro elemento da lista        
+        public NodoJogador ultimo = null;// ponteiro para o ultimo elemento da lista        
         int qtde = 0;
 
         /// <summary>
@@ -21,21 +22,29 @@ namespace Gerenciamento_de_Times
         {
             NodoJogador novo = new NodoJogador();
             novo.Dado = valor;
-
             if (anterior == null)
             {
                 if (qtde == 0)
+                {
                     primeiro = novo;
+                    novo.Anterior = null;
+                }
                 else
                 {
+                    primeiro.Anterior = novo;
                     novo.Proximo = primeiro;
                     primeiro = novo;
                 }
             }
             else
             {
+                novo.Anterior = ultimo;
                 novo.Proximo = anterior.Proximo;
                 anterior.Proximo = novo;
+            }
+            if (novo.Proximo == null)
+            {
+                ultimo = novo;
             }
             qtde++;
         }

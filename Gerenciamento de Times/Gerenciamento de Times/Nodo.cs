@@ -10,6 +10,8 @@ namespace Gerenciamento_de_Times
     {
         public Time Dado { get; set; }
         public Nodo Proximo { get; set; }
+        public Nodo Anterior { get; set; }
+
 
         public Nodo()
         {

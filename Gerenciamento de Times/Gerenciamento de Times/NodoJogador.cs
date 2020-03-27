@@ -10,6 +10,8 @@ namespace Gerenciamento_de_Times
     {
         public Jogador Dado { get; set; }
         public NodoJogador Proximo { get; set; }
+        public NodoJogador Anterior { get; set; }
+
 
         public NodoJogador()
         {

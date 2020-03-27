@@ -9,6 +9,7 @@ namespace Gerenciamento_de_Times
     class ListaTime
     {
         public Nodo primeiro = null; // ponteiro para o primeiro elemento da lista        
+        public Nodo ultimo = null;
         int qtde = 0;
 
         /// <summary>
@@ -21,21 +22,29 @@ namespace Gerenciamento_de_Times
         {
             Nodo novo = new Nodo();
             novo.Dado = valor;
-
             if (anterior == null)
             {
                 if (qtde == 0)
+                {
                     primeiro = novo;
+                    novo.Anterior = null;
+                }
                 else
                 {
+                    primeiro.Anterior = novo;
                     novo.Proximo = primeiro;
                     primeiro = novo;
                 }
             }
             else
             {
+                novo.Anterior = ultimo;
                 novo.Proximo = anterior.Proximo;
                 anterior.Proximo = novo;
+            }
+            if (novo.Proximo == null)
+            {
+                ultimo = novo;
             }
             qtde++;
         }
