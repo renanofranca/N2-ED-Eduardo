@@ -111,13 +111,8 @@ namespace Gerenciamento_de_Times
                 throw new Exception("Não é possível remover.");
             if (posicao == 0)
             {
-                if (qtde == 1)
-                    primeiro = primeiro.Proximo;
-                else
-                {
-                    primeiro = primeiro.Proximo;
-                    primeiro.Anterior = null;
-                }
+                primeiro = primeiro.Proximo;
+                primeiro.Anterior = null;
             }
             else
             {
@@ -125,8 +120,16 @@ namespace Gerenciamento_de_Times
                 Nodo aux = primeiro;
                 for (int i = 1; i < posicao; i++)
                     aux = aux.Proximo;
-                aux.Proximo.Proximo.Anterior = aux;
-                aux.Proximo = aux.Proximo.Proximo;
+                if (posicao + 1 == qtde)
+                {
+                    aux.Proximo = aux.Proximo.Proximo;
+                    ultimo = aux;
+                }
+                else
+                {
+                    aux.Proximo = aux.Proximo.Proximo;
+                    aux.Proximo.Anterior = aux;
+                }
             }
             qtde--;
         }
