@@ -29,7 +29,8 @@ namespace Gerenciamento_de_Times
                 try
                 {
                     VariaveisGlobais.listaTime.RemoverTime(txtNome.Text);
-
+                    MessageBox.Show("Time excluido com sucesso");
+                    txtNome.Clear();   
                 }
                 catch (Exception err)
                 {
