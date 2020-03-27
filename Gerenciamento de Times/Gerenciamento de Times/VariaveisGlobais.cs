@@ -16,5 +16,6 @@ namespace Gerenciamento_de_Times
         }
 
         public static ListaJogador listaJogador = new ListaJogador();
+        public static int quatidadetimes;
     }
 }

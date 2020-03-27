@@ -73,7 +73,7 @@
             this.txtLista.Location = new System.Drawing.Point(12, 27);
             this.txtLista.Multiline = true;
             this.txtLista.Name = "txtLista";
-            this.txtLista.Size = new System.Drawing.Size(510, 480);
+            this.txtLista.Size = new System.Drawing.Size(510, 469);
             this.txtLista.TabIndex = 1;
             // 
             // label1

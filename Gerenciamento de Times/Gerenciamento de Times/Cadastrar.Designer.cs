@@ -127,7 +127,7 @@
             this.btnCadastrarJogador.Location = new System.Drawing.Point(116, 142);
             this.btnCadastrarJogador.Name = "btnCadastrarJogador";
             this.btnCadastrarJogador.Size = new System.Drawing.Size(121, 26);
-            this.btnCadastrarJogador.TabIndex = 11;
+            this.btnCadastrarJogador.TabIndex = 18;
             this.btnCadastrarJogador.Text = "Cadastrar Jogador";
             this.btnCadastrarJogador.UseVisualStyleBackColor = true;
             this.btnCadastrarJogador.Click += new System.EventHandler(this.btnCadastrarJogador_Click);

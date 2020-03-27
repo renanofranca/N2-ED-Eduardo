@@ -92,7 +92,10 @@ namespace Gerenciamento_de_Times
 
         private void Cadastrar_Load(object sender, EventArgs e)
         {
-
+            while(VariaveisGlobais.quatidadetimes != 0)
+            {
+                cbxTimes.Items.Add((VariaveisGlobais.listaTime.RetornaSomenteOsTimes).ToString);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

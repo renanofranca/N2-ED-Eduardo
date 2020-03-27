@@ -47,6 +47,7 @@ namespace Gerenciamento_de_Times
                 ultimo = novo;
             }
             qtde++;
+            VariaveisGlobais.quatidadetimes = qtde;
         }
 
         /// <summary>
@@ -195,7 +196,8 @@ namespace Gerenciamento_de_Times
             while (aux != null)
             {
                 
-                r = r + Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine + aux.Dado.ListaJogador.Listar();
+                r = r + Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
+                    aux.Dado.ListaJogador.Listar() + Environment.NewLine;
                 aux = aux.Proximo;
             }
             return r.Trim();
@@ -207,7 +209,8 @@ namespace Gerenciamento_de_Times
             while (aux != null)
             {
 
-                r = r + Environment.NewLine + "Time: " +aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine + aux.Dado.ListaJogador.Listar();
+                r = r + Environment.NewLine + "Time: " +aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
+                    aux.Dado.ListaJogador.Listar() + Environment.NewLine;
                 aux = aux.Anterior;
             }
             return r.Trim();
@@ -229,6 +232,12 @@ namespace Gerenciamento_de_Times
             }
 
             throw new Exception("Este Time não esta cadastrado");
+        }
+
+        public string RetornaSomenteOsTimes()
+        {
+            Nodo aux = primeiro;
+            return (aux.Dado.NomeTime);
         }
     }
 }
