@@ -189,7 +189,8 @@ namespace Gerenciamento_de_Times
             Nodo aux = primeiro;
             while (aux != null)
             {
-                r = r + Environment.NewLine + aux.Dado.NomeTime;
+                
+                r = r + Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine + aux.Dado.ListaJogador.Listar();
                 aux = aux.Proximo;
             }
             return r.Trim();
@@ -197,11 +198,12 @@ namespace Gerenciamento_de_Times
         public string ListarInvertido()
         {
             string r = string.Empty;
-            Nodo aux = primeiro;
-            for (int i = qtde; i <= 0; i--)
+            Nodo aux = ultimo;
+            while (aux != null)
             {
-                r = r + Environment.NewLine + aux.Dado.NomeTime;
-                aux = aux.Proximo;
+
+                r = r + Environment.NewLine + "Time: " +aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine + aux.Dado.ListaJogador.Listar();
+                aux = aux.Anterior;
             }
             return r.Trim();
         }
