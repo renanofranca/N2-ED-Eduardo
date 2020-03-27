@@ -111,7 +111,7 @@ namespace Gerenciamento_de_Times
                 //descobre qual é o nodo anterior ao que será incluído
                 NodoJogador aux2 = primeiro;
                 for (int i = 1; i < contagem; i++)
-                    aux = aux.Proximo;
+                    aux2 = aux2.Proximo;
 
                 InserirNaPosicao(aux2, valor);
             }
@@ -160,18 +160,25 @@ namespace Gerenciamento_de_Times
             return false;
         }
 
-        //public bool Pesquisa(string time, string treinador)
-        //{
-        //    NodoJogador aux = primeiro;
-        //    while (aux != null)
-        //    {
-        //        if (aux.Dado.NomeTime == time)
-        //            throw new Exception("Time Já Cadastrado");
-        //        else if (aux.Dado.NomeTreinador == treinador)
-        //            throw new Exception("Técnico Já Cadastrado");
-        //        aux = aux.Proximo;
-        //    }
-        //    return false;
-        //}
+        public void RemoverDaPosicao(int posicao)
+        {
+            if (posicao >= qtde || posicao < 0 || qtde == 0)
+                throw new Exception("Não é possível remover.");
+            if (posicao == 0)
+            {
+                primeiro = primeiro.Proximo;
+                primeiro.Anterior = null;
+            }
+            else
+            {
+                //descobre qual é o nodo anterior que será excluido
+                NodoJogador aux = primeiro;
+                for (int i = 1; i < posicao; i++)
+                    aux = aux.Proximo;
+                aux.Proximo.Proximo.Anterior = aux;
+                aux.Proximo = aux.Proximo.Proximo;
+            }
+            qtde--;
+        }
     }
 }

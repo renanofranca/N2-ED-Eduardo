@@ -73,7 +73,7 @@ namespace Gerenciamento_de_Times
                 while (aux.Proximo != null)
                     aux = aux.Proximo;
 
-                InserirNaPosicao(aux, valor);
+                InserirNaPosicao(ultimo, valor);
             }
         }
         /// <summary>
@@ -108,22 +108,27 @@ namespace Gerenciamento_de_Times
         {
             if (posicao >= qtde || posicao < 0 || qtde == 0)
                 throw new Exception("Não é possível remover.");
-
             if (posicao == 0)
-                primeiro = primeiro.Proximo;
+            {
+                if (qtde == 1)
+                    primeiro = primeiro.Proximo;
+                else
+                {
+                    primeiro = primeiro.Proximo;
+                    primeiro.Anterior = null;
+                }
+            }
             else
             {
                 //descobre qual é o nodo anterior que será excluido
                 Nodo aux = primeiro;
                 for (int i = 1; i < posicao; i++)
                     aux = aux.Proximo;
-
+                aux.Proximo.Proximo.Anterior = aux;
                 aux.Proximo = aux.Proximo.Proximo;
             }
-
             qtde--;
         }
-
 
         public bool Pesquisa(string time, string treinador)
         {
@@ -132,7 +137,7 @@ namespace Gerenciamento_de_Times
             {
                 if (aux.Dado.NomeTime == time)
                     throw new Exception("Time Já Cadastrado");
-                else if(aux.Dado.NomeTreinador == treinador)
+                else if (aux.Dado.NomeTreinador == treinador)
                     throw new Exception("Técnico Já Cadastrado");
                 aux = aux.Proximo;
             }
@@ -204,6 +209,24 @@ namespace Gerenciamento_de_Times
                 aux = aux.Proximo;
             }
             return r.Trim();
+        }
+
+        public void RemoverTime(string time)
+        {
+            int contagem = 0;
+            Nodo aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.NomeTime == time)
+                {
+                    RemoverDaPosicao(contagem);
+                    return;
+                }
+                contagem ++;
+                aux = aux.Proximo;
+            }
+
+            throw new Exception("Este Time não esta cadastrado");
         }
     }
 }

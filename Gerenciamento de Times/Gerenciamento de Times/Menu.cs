@@ -34,5 +34,11 @@ namespace Gerenciamento_de_Times
             Lista lista = new Lista();
             lista.Show();
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            Remover remover = new Remover();
+            remover.Show();
+        }
     }
 }
