@@ -111,8 +111,16 @@ namespace Gerenciamento_de_Times
                 throw new Exception("Não é possível remover.");
             if (posicao == 0)
             {
-                primeiro = primeiro.Proximo;
-                primeiro.Anterior = null;
+                if (primeiro.Proximo == null)
+                {
+                    primeiro = null;
+                    ultimo = null;
+                }
+                else
+                {
+                    primeiro = primeiro.Proximo;
+                    primeiro.Anterior = null;
+                }
             }
             else
             {
@@ -252,6 +260,18 @@ namespace Gerenciamento_de_Times
             }
             return retorno;
 
+        }
+
+        public void RemoverJogador(string jogador)
+        {
+            Nodo aux = primeiro;
+            while (aux != null)
+            {    
+                aux.Dado.ListaJogador.Removerjogador(jogador);
+                aux = aux.Proximo;
+            }
+            if (VariaveisGlobais.jogadorEncontrado == false)
+                throw new Exception("Este Jogador não esta cadastrado");
         }
     }
 }

@@ -37,6 +37,19 @@ namespace Gerenciamento_de_Times
                     MessageBox.Show(err.Message);
                 }                
             }
+            if (rdbJogador.Checked)
+            {
+                try
+                {
+                    VariaveisGlobais.listaTime.RemoverJogador(txtNome.Text);
+                    MessageBox.Show("Jogador excluido com sucesso");
+                    txtNome.Clear();
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message);
+                }
+            }
         }
 
     }

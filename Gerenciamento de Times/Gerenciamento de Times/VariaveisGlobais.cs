@@ -10,6 +10,8 @@ namespace Gerenciamento_de_Times
     {
         public static ListaTime listaTime = new ListaTime();
 
+        public static bool jogadorEncontrado = false;
+
         public static string PesquisarJogador(string nome)
         {
             return listaTime.RetornarResultadoPesquisa(nome);

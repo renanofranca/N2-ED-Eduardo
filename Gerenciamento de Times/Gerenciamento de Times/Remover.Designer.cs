@@ -62,7 +62,7 @@
             this.groupBox1.Size = new System.Drawing.Size(239, 129);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Remover";
             // 
             // btnRemover
             // 
@@ -116,7 +116,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 153);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Remover";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Remover";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

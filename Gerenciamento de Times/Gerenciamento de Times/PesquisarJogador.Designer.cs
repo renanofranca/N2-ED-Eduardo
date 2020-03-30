@@ -66,7 +66,8 @@
             this.txtRespostaPesquisa.Multiline = true;
             this.txtRespostaPesquisa.Name = "txtRespostaPesquisa";
             this.txtRespostaPesquisa.ReadOnly = true;
-            this.txtRespostaPesquisa.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtRespostaPesquisa.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtRespostaPesquisa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRespostaPesquisa.Size = new System.Drawing.Size(310, 253);
             this.txtRespostaPesquisa.TabIndex = 3;
             // 

@@ -167,8 +167,16 @@ namespace Gerenciamento_de_Times
                 throw new Exception("Não é possível remover.");
             if (posicao == 0)
             {
-                primeiro = primeiro.Proximo;
-                primeiro.Anterior = null;
+                if (primeiro.Proximo == null)
+                {
+                    primeiro = null;
+                    ultimo = null;
+                }
+                else
+                {
+                    primeiro = primeiro.Proximo;
+                    primeiro.Anterior = null;
+                }
             }
             else
             {
@@ -176,10 +184,34 @@ namespace Gerenciamento_de_Times
                 NodoJogador aux = primeiro;
                 for (int i = 1; i < posicao; i++)
                     aux = aux.Proximo;
-                aux.Proximo.Proximo.Anterior = aux;
-                aux.Proximo = aux.Proximo.Proximo;
+                if (posicao + 1 == qtde)
+                {
+                    aux.Proximo = aux.Proximo.Proximo;
+                    ultimo = aux;
+                }
+                else
+                {
+                    aux.Proximo = aux.Proximo.Proximo;
+                    aux.Proximo.Anterior = aux;
+                }
             }
             qtde--;
+        }
+        public void Removerjogador(string jogador)
+        {
+            int contagem = 0;
+            NodoJogador aux = primeiro;
+            while (aux != null)
+            {
+                if (aux.Dado.Nome == jogador)
+                {
+                    RemoverDaPosicao(contagem);
+                    VariaveisGlobais.jogadorEncontrado = true;
+                    return;
+                }
+                contagem++;
+                aux = aux.Proximo;
+            }
         }
     }
 }

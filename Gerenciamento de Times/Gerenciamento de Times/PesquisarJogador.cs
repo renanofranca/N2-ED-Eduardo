@@ -27,7 +27,7 @@ namespace Gerenciamento_de_Times
             txtRespostaPesquisa.Clear();
 
            string nomeJogador = txtNomePesquisa.Text;
-           string resposta = VariaveisGlobais.PesquisarJogador(nomeJogador);
+           string resposta = "Time:"+ Environment.NewLine + VariaveisGlobais.PesquisarJogador(nomeJogador);
 
 
             string[] respostavet = resposta.Split(';');
