@@ -21,6 +21,11 @@ namespace Gerenciamento_de_Times
         
         private void btnListar_Click(object sender, EventArgs e)
         {
+            if (rdbInvertido.Checked)
+                VariaveisGlobais.Invertido = true;
+            if (rdbListar.Checked)
+                VariaveisGlobais.Invertido = false;
+
             txtLista.Text = "";
             txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.Listar());
         }
@@ -30,10 +35,9 @@ namespace Gerenciamento_de_Times
 
         }
 
-        private void btnListarInvertido_Click(object sender, EventArgs e)
+        private void txtLista_TextChanged(object sender, EventArgs e)
         {
-            txtLista.Text = "";
-            txtLista.Text = Convert.ToString(VariaveisGlobais.listaTime.ListarInvertido());
+
         }
     }
 }

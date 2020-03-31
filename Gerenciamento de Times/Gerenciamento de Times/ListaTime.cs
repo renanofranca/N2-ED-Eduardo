@@ -141,7 +141,6 @@ namespace Gerenciamento_de_Times
             }
             qtde--;
         }
-
         public bool Pesquisa(string time, string treinador)
         {
             Nodo aux = primeiro;
@@ -203,28 +202,34 @@ namespace Gerenciamento_de_Times
         public string Listar()
         {
             string r = string.Empty;
-            Nodo aux = primeiro;
-            while (aux != null)
-            {
-                
-                r = r + Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
-                    aux.Dado.ListaJogador.Listar() + Environment.NewLine;
-                aux = aux.Proximo;
-            }
-            return r.Trim();
-        }
-        public string ListarInvertido()
-        {
-            string r = string.Empty;
-            Nodo aux = ultimo;
-            while (aux != null)
-            {
 
-                r = r + Environment.NewLine + "Time: " +aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
-                    aux.Dado.ListaJogador.Listar() + Environment.NewLine;
-                aux = aux.Anterior;
+            if (VariaveisGlobais.Invertido == false)
+            {
+                Nodo aux = primeiro;
+                return ListarTimes(aux, r);
             }
-            return r.Trim();
+            else
+            {
+                Nodo aux = ultimo;
+                return ListarInvertido(aux, r);
+
+            }
+        }
+        public string ListarTimes(Nodo aux, string r)
+        {
+            if (aux == null)
+                return r;
+            else
+                return r += Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
+                       aux.Dado.ListaJogador.Listar() + Environment.NewLine + ListarTimes(aux.Proximo, r);
+        }
+        public string ListarInvertido(Nodo aux, string r)
+        {
+            if (aux == null)
+                return r;
+            else
+                return r += Environment.NewLine + "Time: " + aux.Dado.NomeTime + " Treinador: " + aux.Dado.NomeTreinador + Environment.NewLine +
+                       aux.Dado.ListaJogador.Listar() + Environment.NewLine + ListarInvertido(aux.Anterior, r);
         }
 
         public void RemoverTime(string time)
@@ -238,7 +243,7 @@ namespace Gerenciamento_de_Times
                     RemoverDaPosicao(contagem);
                     return;
                 }
-                contagem ++;
+                contagem++;
                 aux = aux.Proximo;
             }
 
@@ -266,7 +271,7 @@ namespace Gerenciamento_de_Times
         {
             Nodo aux = primeiro;
             while (aux != null)
-            {    
+            {
                 aux.Dado.ListaJogador.Removerjogador(jogador);
                 aux = aux.Proximo;
             }

@@ -28,41 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnListarInvertido = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.txtLista = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdbListar = new System.Windows.Forms.RadioButton();
+            this.rdbInvertido = new System.Windows.Forms.RadioButton();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnListarInvertido);
-            this.panel1.Controls.Add(this.btnListar);
-            this.panel1.Controls.Add(this.txtLista);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(531, 558);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // btnListarInvertido
-            // 
-            this.btnListarInvertido.Location = new System.Drawing.Point(270, 513);
-            this.btnListarInvertido.Name = "btnListarInvertido";
-            this.btnListarInvertido.Size = new System.Drawing.Size(252, 32);
-            this.btnListarInvertido.TabIndex = 3;
-            this.btnListarInvertido.Text = "Listar Invertido";
-            this.btnListarInvertido.UseVisualStyleBackColor = true;
-            this.btnListarInvertido.Click += new System.EventHandler(this.btnListarInvertido_Click);
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(12, 513);
+            this.btnListar.Location = new System.Drawing.Point(186, 23);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(252, 32);
+            this.btnListar.Size = new System.Drawing.Size(122, 25);
             this.btnListar.TabIndex = 2;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
@@ -70,43 +48,69 @@
             // 
             // txtLista
             // 
-            this.txtLista.Location = new System.Drawing.Point(12, 27);
+            this.txtLista.Location = new System.Drawing.Point(14, 67);
             this.txtLista.Multiline = true;
             this.txtLista.Name = "txtLista";
-            this.txtLista.Size = new System.Drawing.Size(510, 469);
+            this.txtLista.Size = new System.Drawing.Size(294, 377);
             this.txtLista.TabIndex = 1;
+            this.txtLista.TextChanged += new System.EventHandler(this.txtLista_TextChanged);
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Listar";
+            this.groupBox1.Controls.Add(this.rdbInvertido);
+            this.groupBox1.Controls.Add(this.rdbListar);
+            this.groupBox1.Controls.Add(this.btnListar);
+            this.groupBox1.Controls.Add(this.txtLista);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(323, 459);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Listar";
+            // 
+            // rdbListar
+            // 
+            this.rdbListar.AutoSize = true;
+            this.rdbListar.Location = new System.Drawing.Point(14, 27);
+            this.rdbListar.Name = "rdbListar";
+            this.rdbListar.Size = new System.Drawing.Size(50, 17);
+            this.rdbListar.TabIndex = 1;
+            this.rdbListar.TabStop = true;
+            this.rdbListar.Text = "Listar";
+            this.rdbListar.UseVisualStyleBackColor = true;
+            // 
+            // rdbInvertido
+            // 
+            this.rdbInvertido.AutoSize = true;
+            this.rdbInvertido.Location = new System.Drawing.Point(90, 27);
+            this.rdbInvertido.Name = "rdbInvertido";
+            this.rdbInvertido.Size = new System.Drawing.Size(94, 17);
+            this.rdbInvertido.TabIndex = 2;
+            this.rdbInvertido.TabStop = true;
+            this.rdbInvertido.Text = "Listar Invertido";
+            this.rdbInvertido.UseVisualStyleBackColor = true;
             // 
             // Lista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 582);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(347, 480);
+            this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Lista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnListarInvertido;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.TextBox txtLista;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rdbInvertido;
+        private System.Windows.Forms.RadioButton rdbListar;
     }
 }
