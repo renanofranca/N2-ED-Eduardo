@@ -165,6 +165,9 @@ namespace Gerenciamento_de_Times
         {
             if (posicao >= qtde || posicao < 0 || qtde == 0)
                 throw new Exception("Não é possível remover.");
+
+            VariaveisGlobais.jogadorEncontrado = true;
+
             if (posicao == 0)
             {
                 if (primeiro.Proximo == null)

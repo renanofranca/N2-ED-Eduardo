@@ -270,7 +270,7 @@ namespace Gerenciamento_de_Times
                 aux.Dado.ListaJogador.Removerjogador(jogador);
                 aux = aux.Proximo;
             }
-            if (VariaveisGlobais.jogadorEncontrado == false)
+            if (VariaveisGlobais.jogadorEncontrado == false || aux != null)
                 throw new Exception("Este Jogador não esta cadastrado");
         }
     }
