@@ -25,15 +25,15 @@ namespace Gerenciamento_de_Times
             {
                 Time time = new Time();
 
-                time.NomeTime = txtNomeTime.Text;
-                time.NomeTreinador = txtNomeTreinador.Text;
+                time.NomeTime = txtNomeTime.Text.Trim();
+                time.NomeTreinador = txtNomeTreinador.Text.Trim();
 
                 //Validar Time existe, e adicionar a Lista
                 try
                 {
-                    VariaveisGlobais.listaTime.Pesquisa(txtNomeTime.Text, txtNomeTreinador.Text);
+                    VariaveisGlobais.listaTime.Pesquisa(txtNomeTime.Text.Trim(), txtNomeTreinador.Text.Trim());
                     VariaveisGlobais.listaTime.InserirNoFim(time);
-                    cbxTimes.Items.Add(txtNomeTime.Text);
+                    cbxTimes.Items.Add(txtNomeTime.Text.Trim());
 
                 }
                 catch (Exception err)
@@ -56,18 +56,18 @@ namespace Gerenciamento_de_Times
 
         private void btnCadastrarJogador_Click(object sender, EventArgs e)
         {
-            string time = cbxTimes.Text;
+            string time = cbxTimes.Text.Trim();
             Jogador jogador = new Jogador();
-            if (txtNomeJogador.Text == "" || cbxPosicaoJogador.Text == "")
+            if (txtNomeJogador.Text.Trim() == "" || cbxPosicaoJogador.Text.Trim() == "")
             {
                 MessageBox.Show("Nome do Jogador ou Posição Não Preenchidos");
                 return;
             }
             try
             {
-                jogador.Nome = txtNomeJogador.Text;
-                jogador.Numero = int.Parse(txtCamisaJogador.Text);
-                jogador.Posicao = cbxPosicaoJogador.Text;
+                jogador.Nome = txtNomeJogador.Text.Trim();
+                jogador.Numero = int.Parse(txtCamisaJogador.Text.Trim());
+                jogador.Posicao = cbxPosicaoJogador.Text.Trim();
             }
             catch
             {
